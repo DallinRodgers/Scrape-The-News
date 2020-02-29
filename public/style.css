@@ -1,0 +1,78 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+/* body {
+  background-color: #f2f6d0;
+} */
+/* #wrapper {
+  width: 960px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 5%;
+} */
+#showcase {
+  height: auto;
+  min-height: 400px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url("./img/folded-newspapers.jpg") center center;
+  color: #fff;
+  text-shadow: 2px 2px #000000;
+}
+h1 {
+  font-size: 100px;
+  font-weight: 300;
+}
+#articles {
+  display: inline-block;
+  overflow: auto;
+  /* width: 60%; */
+  height: 700px;
+}
+/* #notes {
+  float: right;
+  width: 30%;
+} */
+.content {
+  display: flex;
+}
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.article {
+  padding: 5px;
+  border: 3px solid red;
+}
+h2 {
+  margin-bottom: 2px;
+  margin-top: 2px;
+  font-weight: 300;
+  font-size: 30px;
+}
+.link {
+  text-decoration: none;
+  color: rgb(0, 132, 255);
+  margin: 2px;
+}
+.summary {
+  padding: 4px;
+}
+textarea,
+input {
+  display: block;
+  width: 100%;
+  background-color: #fcf5c7;
+}
+input {
+  height: 36px;
+  font-size: 24px;
+}
+textarea {
+  height: 200px;
+  font-size: 18px;
+}
