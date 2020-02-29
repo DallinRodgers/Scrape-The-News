@@ -24,16 +24,21 @@ app.use(express.json());
 // Make public a static folder
 app.use(express.static("public"));
 
+// If deployed, use the deployed database. Otherwise use the local mongoHeadlines database
+var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/theScraper";
+
+mongoose.connect(MONGODB_URI);
+
 // Connect to the Mongo DB
-mongoose
-  .connect("mongodb://localhost/theScraper", {
-    useNewUrlParser: true,
-    useCreateIndex: true,
-    useFindAndModify: false
-  })
-  .then((con) => {
-    console.log("DB connection successful");
-  });
+// mongoose
+//   .connect("mongodb://localhost/theScraper", {
+//     useNewUrlParser: true,
+//     useCreateIndex: true,
+//     useFindAndModify: false
+//   })
+//   .then((con) => {
+//     console.log("DB connection successful");
+//   });
 
 // Routes
 
@@ -119,11 +124,6 @@ app.get("/articles/:id", function(req, res) {
       // If an error occurred, send it to the client
       res.json(err);
     });
-});
-
-db.Note.create(result).then(function(dbArticle) {
-  // View the added result in the console
-  console.log(dbArticle);
 });
 
 // Route for saving/updating an Article's associated Note
